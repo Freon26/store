@@ -10,4 +10,5 @@
 //= require admin/spree_backend
 
 //= require_tree .
+//= require admin/spree_ulti_blog
 //= require admin/spree_fancy

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131128133643) do
+ActiveRecord::Schema.define(:version => 20131129033109) do
 
   create_table "spree_activators", :force => true do |t|
     t.string   "description"
@@ -83,6 +83,59 @@ ActiveRecord::Schema.define(:version => 20131128133643) do
 
   add_index "spree_assets", ["viewable_id"], :name => "index_assets_on_viewable_id"
   add_index "spree_assets", ["viewable_type", "type"], :name => "index_assets_on_viewable_type_and_type"
+
+  create_table "spree_blog_categories", :force => true do |t|
+    t.string   "name"
+    t.string   "slug"
+    t.integer  "blog_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "spree_blog_categories", ["blog_id"], :name => "index_spree_blog_categories_on_blog_id"
+
+  create_table "spree_blog_comments", :force => true do |t|
+    t.integer  "post_id"
+    t.integer  "author_id"
+    t.text     "comment"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "spree_blog_comments", ["author_id"], :name => "index_spree_blog_comments_on_author_id"
+  add_index "spree_blog_comments", ["post_id"], :name => "index_spree_blog_comments_on_post_id"
+
+  create_table "spree_blog_posts", :force => true do |t|
+    t.string   "title"
+    t.string   "slug"
+    t.text     "teaser"
+    t.text     "body"
+    t.datetime "posted_at"
+    t.integer  "blog_id"
+    t.integer  "author_id"
+    t.integer  "category_id"
+    t.string   "state"
+    t.datetime "created_at",                             :null => false
+    t.datetime "updated_at",                             :null => false
+    t.boolean  "featured",            :default => false
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+  end
+
+  add_index "spree_blog_posts", ["author_id"], :name => "index_spree_blog_posts_on_author_id"
+  add_index "spree_blog_posts", ["blog_id"], :name => "index_spree_blog_posts_on_blog_id"
+  add_index "spree_blog_posts", ["category_id"], :name => "index_spree_blog_posts_on_category_id"
+
+  create_table "spree_blogs", :force => true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.string   "slug"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  add_index "spree_blogs", ["slug"], :name => "index_spree_blogs_on_slug", :unique => true
 
   create_table "spree_calculators", :force => true do |t|
     t.string   "type"
@@ -696,6 +749,15 @@ ActiveRecord::Schema.define(:version => 20131128133643) do
     t.datetime "updated_at",                                           :null => false
     t.string   "spree_api_key",          :limit => 48
     t.datetime "remember_created_at"
+    t.string   "name"
+    t.text     "about"
+    t.string   "twitter"
+    t.string   "facebook"
+    t.string   "google_plus"
+    t.string   "skype"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.string   "avatar_file_size"
   end
 
   add_index "spree_users", ["email"], :name => "email_idx_unique", :unique => true

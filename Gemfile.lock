@@ -1,4 +1,15 @@
 GIT
+  remote: git://github.com/Freon26/spree_ulti_blog_modified_kaminari.git
+  revision: 8b1d985471288e869800667d00eb33b1e04e6ce2
+  specs:
+    spree_ulti_blog (2.0.4)
+      friendly_id (~> 4.0.10.1)
+      kaminari (~> 0.15.0)
+      spree_auth_devise
+      spree_core (~> 2.0.4)
+      state_machine (~> 1.2.0)
+
+GIT
   remote: git://github.com/spree/spree.git
   revision: 5bfa7fbbad2b95296663f2a2d1c386659751cd84
   branch: 2-0-stable
@@ -191,6 +202,8 @@ GEM
     erubis (2.7.0)
     execjs (2.0.2)
     ffaker (1.22.1)
+    friendly_id (4.0.10.1)
+      activerecord (>= 3.0, < 4.0)
     fssm (0.2.10)
     gyoku (0.4.6)
       builder (>= 2.1.2)
@@ -337,5 +350,6 @@ DEPENDENCIES
   spree_gateway!
   spree_reviews!
   spree_static_content!
+  spree_ulti_blog!
   sqlite3
   uglifier (>= 1.0.3)

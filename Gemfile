@@ -7,13 +7,8 @@ gem 'rails', '3.2.15'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-group :production do
-  gem 'pg'
-end        
+gem 'sqlite3'
 
-group :development, :test do
-  gem 'sqlite3'
-end
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -45,4 +40,5 @@ gem 'spree_static_content', :github => 'spree/spree_static_content', :branch => 
 
 gem 'spree_reviews', github: 'spree/spree_reviews', :branch => '2-0-stable'
 
-gem 'spree_ulti_blog', :path => 'C:\RailsInstaller\Projects\Other Projecs\spree_ulti_blog-master' #github: 'Ultimaker/spree_ulti_blog'
+gem 'spree_ulti_blog', github: 'Freon26/spree_ulti_blog_modified_kaminari'
+#:path => 'C:\RailsInstaller\Projects\Other Projecs\spree_ulti_blog_modified_kaminari' 
