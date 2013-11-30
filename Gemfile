@@ -40,5 +40,6 @@ gem 'spree_static_content', :github => 'spree/spree_static_content', :branch => 
 
 gem 'spree_reviews', github: 'spree/spree_reviews', :branch => '2-0-stable'
 
-gem 'spree_ulti_blog', github: 'Freon26/spree_ulti_blog_modified_kaminari'
-#:path => 'C:\RailsInstaller\Projects\Other Projecs\spree_ulti_blog_modified_kaminari' 
+gem 'spree_wishlist', :git => 'git://github.com/spree/spree_wishlist.git', :branch => '2-0-stable'
+gem 'spree_email_to_friend', :git => 'git://github.com/spree/spree_email_to_friend.git', :branch => '2-0-stable'
+gem 'spree_social', :git => 'git://github.com/spree/spree_social.git', :branch => '2-0-stable'
